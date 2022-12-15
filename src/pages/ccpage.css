@@ -1,0 +1,7 @@
+@import url('https://fonts.google.com/specimen/Space+Grotesk');
+
+div {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+}
