@@ -1,0 +1,61 @@
+div {
+  position: relative;
+}
+.frontcard {
+  background-image: url(../images/bg-card-front.png);
+  background-size: 445px 245px;
+  background-repeat: no-repeat;
+  width: 445px;
+  height: 245px;
+  right: 15%;
+  top: 210px;
+  border-radius: 12px;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+
+}
+
+.bigCircle {
+  display: inline-grid;
+  background-color: white;
+  border-radius: 50px;
+  width: 46px;
+  height: 46px;
+  left: 5%;
+  top: 8%;
+}
+
+.smallCircle {
+  display: inline-grid;
+  border-radius: 50px;
+  border: white solid 1px;
+  width: 23px;
+  height: 23px;
+  left: 8%;
+  top: 5%;
+}
+
+h3.ccNumber {
+  width: fit-content;
+  position: relative;
+  top: 35%;
+  left: 5%;
+  margin: 0;
+}
+
+p { 
+  display: inline-grid;
+  width:fit-content;
+  position: relative;
+  top: 45%;
+  margin: 0;
+}
+
+p.cardholder {
+  left: 5%;
+}
+
+p.expDate {
+  left: 53%;
+}

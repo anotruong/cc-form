@@ -1,21 +1,57 @@
 import React from 'react';
-import './input.js';
+import '../stylesheets/input.css';
 
-const Input = props => {
-  const element = props.element === 'input' ? (
+const numOfFields = props => {
+
+  switch (props.label) {
+    case "exp.date (mm/yy)":
+      return (
         <input 
           id={props.id} 
+          className={"small-field"}
           type={props.type} 
           placeholder={props.placeholder} 
         />
-      ) : false;
+      );
+    case "cvc":
+      return (
+        <input 
+          id={props.id} 
+          className={"medium-field"}
+          type={props.type} 
+          placeholder={props.placeholder} 
+        />
+      );
+    default:
+      return (
+        <input 
+          id={props.id} 
+          className={"long-field"}
+          type={props.type} 
+          placeholder={props.placeholder} 
+        />
+      );
+  }
+}
 
-  return (
-    <div className={'form-control'}>
-      <label htmlFor={props.id}>{props.label}</label>
-      {element}
-    </div>
-  )
+const Input = props => {
+  const element = numOfFields(props);
+  if (props.label !== "exp.date (mm/yy)") {
+    return (
+      <div className={'single-input'}>
+        <label htmlFor={props.id}>{props.label}</label>
+        {element}
+      </div>
+    )
+  } else {
+    return (
+      <div className={'dual-input'}>
+        <label htmlFor={props.id}>{props.label}</label>
+          {element} {element}
+      </div>
+
+    )
+  }
 };
 
 export default Input;

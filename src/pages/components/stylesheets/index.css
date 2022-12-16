@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+body {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-image: url(../images/bg-main-desktop.png);
+  /* background-size: auto; */
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  body{
+    background-image: url(../images/bg-main-mobile.png);
+    background-size: contain;
+  }
+}

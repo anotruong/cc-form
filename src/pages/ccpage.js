@@ -1,16 +1,18 @@
 import React from 'react';
 import Forms from './components/forms';
+import FrontCard from './components/UIElements/frontcard';
+import BackCard from './components/UIElements/backcard';
 
-// import {small }
-
-import './ccpage.css';
+import './components/stylesheets/ccpage.css';
 
 const CCPage = () => {
   return(
-    <div>
-      <h1>CCPage loaded</h1>
+    <div className="ccform">
+      <BackCard />
+      <FrontCard />
       <Forms />
-    </div>)
+    </div> 
+  )
 };
 
 export default CCPage;

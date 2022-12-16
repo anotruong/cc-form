@@ -1,0 +1,31 @@
+input {
+  color: hsl(278, 68%, 11%);
+  text-transform: capitalize;
+  height: 45px;
+  margin-bottom: 30px;
+  border: 1px #000000 solid;
+  border-radius: 5px;
+}
+
+input.long-field {
+ width: 380px;
+}
+
+input.medium-field{
+  width: 190px;
+}
+
+input.small-field {
+  width: 80px;
+}
+
+/* .dual-input{ */
+  /* margin-right: 10px; */
+/* } */
+
+/* .multiple-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} */

@@ -6,8 +6,6 @@ import React from 'react';
 // } from 'react-router-dom';
 import CCPage from './pages/ccpage';
 
-// import './App.css';
-
 const App = () => {
   return (
     <CCPage />

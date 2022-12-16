@@ -1,0 +1,21 @@
+/* @media only screen and (min-width: 800px) { */
+  .back-card {
+    background-image: url(../images/bg-card-back.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 445px;
+    height: 245px;
+    position: relative;
+    top: 500px;
+    left: 300px;
+    border-radius: 12px;
+  }
+
+  p.cvc-number {
+    color: white;
+    position: relative;
+    top: 40%;
+    left: 77%;
+    width: fit-content;
+  }
+/* } */
