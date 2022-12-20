@@ -1,4 +1,4 @@
-div.form-control {
+.form-control {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -6,12 +6,21 @@ div.form-control {
   height: auto;  
   width: 385px;
   margin-top: 25%;
-  position: sticky;
-
+  /* position: ; */
 }
 
 label {
   display:block;
   text-transform: uppercase;
   color: hsl(278, 68%, 11%);
+}
+
+@media screen and (max-width: 500px) {
+  .form-control {
+    zoom: .9;
+    position: absolute;
+    top: 140%;
+    left: 5%;
+    right: 5%;
+  }
 }

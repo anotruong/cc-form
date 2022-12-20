@@ -11,7 +11,7 @@ const FrontCard = props => {
       <div className="bigCircle" />
       <div className="smallCircle" />
       <h3 className="ccNumber">0000-0000-0000-0000</h3>
-      <p className="cardholder">front-card</p>
+      <p className="cardholder">first and last</p>
       <p className="expDate">00/00</p>
     </div>
   )

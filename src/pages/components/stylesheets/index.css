@@ -10,9 +10,9 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 500px) {
   body{
     background-image: url(../images/bg-main-mobile.png);
-    background-size: contain;
+    background-size: cover;
   }
 }

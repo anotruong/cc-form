@@ -1,17 +1,26 @@
 import React from 'react';
 import '../stylesheets/input.css';
+import {VALIDATION_REQUIRED} from '../validator/validators';
 
 const numOfFields = props => {
 
   switch (props.label) {
     case "exp.date (mm/yy)":
       return (
-        <input 
+        <React.Fragment>
+          <input 
+            id={props.id} 
+            className={"small-field"}
+            type={props.type} 
+            placeholder={'MM'} 
+          />
+          <input 
           id={props.id} 
           className={"small-field"}
           type={props.type} 
-          placeholder={props.placeholder} 
+          placeholder={'YY'} 
         />
+      </React.Fragment>
       );
     case "cvc":
       return (
@@ -29,6 +38,8 @@ const numOfFields = props => {
           className={"long-field"}
           type={props.type} 
           placeholder={props.placeholder} 
+          validator={VALIDATION_REQUIRED}
+          errorText={'Please fill in the field'}
         />
       );
   }
@@ -47,7 +58,7 @@ const Input = props => {
     return (
       <div className={'dual-input'}>
         <label htmlFor={props.id}>{props.label}</label>
-          {element} {element}
+          {element} 
       </div>
 
     )

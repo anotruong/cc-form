@@ -1,5 +1,7 @@
 div {
   position: relative;
+  /* zoom: 0.7; */
+
 }
 .frontcard {
   background-image: url(../images/bg-card-front.png);
@@ -58,4 +60,14 @@ p.cardholder {
 
 p.expDate {
   left: 53%;
+}
+
+@media screen and (max-width: 500px) {
+  .frontcard {
+    zoom: 0.7;
+    position: absolute;
+    left: 4%;
+    top: 65%;
+  }
+  
 }

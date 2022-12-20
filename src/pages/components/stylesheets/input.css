@@ -1,10 +1,13 @@
 input {
   color: hsl(278, 68%, 11%);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
+  font-size: medium;
   height: 45px;
   margin-bottom: 30px;
   border: 1px #000000 solid;
   border-radius: 5px;
+  padding-left: -10px;
+  text-indent: 1em;
 }
 
 input.long-field {
