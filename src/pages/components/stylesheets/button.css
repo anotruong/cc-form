@@ -8,4 +8,13 @@ button {
   border-radius: 5px;
   background-color: hsl(278, 68%, 11%);
   color: white;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 375px) {
+
+  button {
+    max-width: 95%
+  }
+  
 }

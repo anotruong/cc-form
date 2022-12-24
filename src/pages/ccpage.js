@@ -8,9 +8,13 @@ import './components/stylesheets/ccpage.css';
 const CCPage = () => {
   return(
     <div className="ccform">
-      <BackCard />
-      <FrontCard />
-      <Forms />
+      <div className="card-container">
+        <BackCard />
+        <FrontCard />
+      </div>
+      <div className="form-container">
+        <Forms />
+      </div>
     </div> 
   )
 };

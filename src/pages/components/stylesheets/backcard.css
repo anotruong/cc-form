@@ -4,25 +4,28 @@
   background-repeat: no-repeat;
   width: 445px;
   height: 245px;
-  position: relative;
-  top: 500px;
-  left: 300px;
-  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* border-radius: 12px; */
+  /* padding-left: ; */
 }
 
 p.cvc-number {
   color: white;
-  position: relative;
-  top: 37%;
-  left: 77%;
+  position: absolute;
+  top: 43%;
+  /* left: 77%; */
+  right: 13%;
   /* width: fit-content; */
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
   .back-card {
-    zoom: 0.7;
-    top: 15px;
-    left: 50px;
+    zoom: 0.63;
+    top: 2.5rem;
+    /* left: 5%; */
+    right: 3%;
   }
 
   p.cvc-number {

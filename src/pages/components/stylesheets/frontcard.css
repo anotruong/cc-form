@@ -1,10 +1,10 @@
-div {
+/* div {
   position: relative;
   /* zoom: 0.7; */
+/* } */ 
 
-}
-.frontcard {
-  background-image: url(../images/bg-card-front.png);
+.front-card {
+  /* background-image: url(../images/bg-card-front.png);
   background-size: 445px 245px;
   background-repeat: no-repeat;
   width: 445px;
@@ -14,28 +14,41 @@ div {
   border-radius: 12px;
   color: white;
   text-transform: uppercase;
-  padding: 10px;
-
+  padding: 10px; */
+  background-image: url(/static/media/bg-card-front.33d6bbef.png);
+  background-size: 445px 245px;
+  background-repeat: no-repeat;
+  width: 445px;
+  height: 245px;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  color: white;
+  text-transform: uppercase;
+  /* padding: 10px; */
+  position: absolute;
 }
 
-.bigCircle {
+.big-circle {
   display: inline-grid;
   background-color: white;
   border-radius: 50px;
   width: 46px;
   height: 46px;
+  position: relative;
   left: 5%;
-  top: 8%;
+  top: 10%;
 }
 
-.smallCircle {
+.small-circle {
   display: inline-grid;
   border-radius: 50px;
   border: white solid 1px;
   width: 23px;
   height: 23px;
+  position: relative;
   left: 8%;
-  top: 5%;
+  top: 7%;
 }
 
 h3.ccNumber {
@@ -49,8 +62,8 @@ h3.ccNumber {
 p { 
   display: inline-grid;
   width:fit-content;
-  position: relative;
-  top: 45%;
+  position: absolute;
+  top: 78%;
   margin: 0;
 }
 
@@ -59,15 +72,23 @@ p.cardholder {
 }
 
 p.expDate {
-  left: 53%;
+  right: 5%;
 }
 
-@media screen and (max-width: 500px) {
-  .frontcard {
-    zoom: 0.7;
+@media screen and (max-width: 375px) {
+  .front-card {
+    zoom: 0.63;
     position: absolute;
-    left: 4%;
-    top: 65%;
+    left: 3%;
+    top: 11rem;
   }
-  
+
+  p.ccNumber {
+    zoom: 1.4;
+    letter-spacing: 2.4px;
+    left: 5%;
+    top: 51%;
+    font-size: 21px;
+    /* font-weight: 100 */
+  }
 }

@@ -6,7 +6,7 @@ const BackCard = props => {
 
   return (
     <div className="back-card">
-      <p className="cvc-number">cvc #</p>
+      <p className="cvc-number">000</p>
     </div>
   )
 }

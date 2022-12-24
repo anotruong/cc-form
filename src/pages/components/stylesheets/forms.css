@@ -5,22 +5,29 @@
   flex-wrap: wrap;
   height: auto;  
   width: 385px;
-  margin-top: 25%;
-  /* position: ; */
+  left: 15%;
+  top: 2rem;
+  position: relative;
 }
 
 label {
   display:block;
   text-transform: uppercase;
   color: hsl(278, 68%, 11%);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-overflow: unset;
+  white-space: nowrap;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
   .form-control {
-    zoom: .9;
-    position: absolute;
-    top: 140%;
-    left: 5%;
-    right: 5%;
+    /* zoom: .9; */
+    /* position: absolute; */
+    /* top: 21rem; */
+    left: 9px;
+    max-width: 97%;
+    /* padding-left: 5% */
   }
-}
+} 

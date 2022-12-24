@@ -1,13 +1,13 @@
 input {
   color: hsl(278, 68%, 11%);
-  /* text-transform: capitalize; */
   font-size: medium;
   height: 45px;
   margin-bottom: 30px;
-  border: 1px #000000 solid;
+  border: 1px hsl(270, 3%, 87%) solid;
   border-radius: 5px;
-  padding-left: -10px;
+  /* padding-left: -10px; */
   text-indent: 1em;
+  outline: none;
 }
 
 input.long-field {
@@ -15,20 +15,42 @@ input.long-field {
 }
 
 input.medium-field{
-  width: 190px;
+  width: 168px;
 }
 
 input.small-field {
   width: 80px;
+  margin-right: 8px
 }
 
-/* .dual-input{ */
-  /* margin-right: 10px; */
-/* } */
+input:focus {
+  border: 1px #510077 solid;
+}
 
-/* .multiple-inputs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-} */
+.form-input---invalid p {
+  color: red;
+}
+
+.form-input---invalid input {
+  border-color: red;
+}
+
+@media screen and (max-width: 375px) {
+  /* input.long-field {
+    width: 330px;
+  }
+
+  input.medium-field {
+    max-width: 85%;
+
+  }
+
+  input.small-field {
+    margin-right: 0px;
+    max-width: 85%
+  } */
+
+  input {
+    max-width: 85%
+  }
+} 
