@@ -23,11 +23,17 @@ label {
 
 @media screen and (max-width: 375px) {
   .form-control {
-    /* zoom: .9; */
+    zoom: .9;
     /* position: absolute; */
     /* top: 21rem; */
-    left: 9px;
+    left: 1rem;
     max-width: 97%;
     /* padding-left: 5% */
+  }
+
+  label {
+    /* max-width: 50px; */
+    zoom: 1.1;
+    margin-right: 0;
   }
 } 

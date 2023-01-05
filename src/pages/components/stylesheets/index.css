@@ -12,7 +12,8 @@ body {
 
 @media screen and (max-width: 375px) {
   body{
+    /* background-image: none; */
     background-image: url(../images/bg-main-mobile.png);
-    /* background-size: cover; */
+    background-size: 375px 220px;
   }
 }

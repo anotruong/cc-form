@@ -13,8 +13,8 @@ button {
 
 @media screen and (max-width: 375px) {
 
-  button {
-    max-width: 95%
-  }
+  /* button {
+    max-width: 95.5%
+  } */
   
 }

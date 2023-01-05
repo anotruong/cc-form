@@ -1,8 +1,15 @@
 import React from 'react';
-// import Inputs from './inputs.js';
+// import Inputs from '../formElements/input.js';
 // Eventually real time change the dummy name of the front card to match the name on the form.
 
 import '../stylesheets/frontcard.css';
+
+/*
+Import 'input' and pull the placeholder from the thing. */
+
+// let placeholder;
+
+// console.log(Inputs);
 
 const FrontCard = props => {
 
@@ -10,8 +17,8 @@ const FrontCard = props => {
     <div className="front-card">
       <div className="big-circle" />
       <div className="small-circle" />
-      <h3 className="ccNumber">0000-0000-0000-0000</h3>
-      <p className="cardholder">first and last</p>
+      <p className="ccNumber">0000 0000 0000 0000</p>
+      <p className="cardholder">Jane Appleseed </p>
       <p className="expDate">00/00</p>
     </div>
   )

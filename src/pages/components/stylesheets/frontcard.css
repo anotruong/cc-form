@@ -1,21 +1,5 @@
-/* div {
-  position: relative;
-  /* zoom: 0.7; */
-/* } */ 
-
 .front-card {
-  /* background-image: url(../images/bg-card-front.png);
-  background-size: 445px 245px;
-  background-repeat: no-repeat;
-  width: 445px;
-  height: 245px;
-  right: 15%;
-  top: 210px;
-  border-radius: 12px;
-  color: white;
-  text-transform: uppercase;
-  padding: 10px; */
-  background-image: url(/static/media/bg-card-front.33d6bbef.png);
+  background-image: url(../images/bg-card-front.png);
   background-size: 445px 245px;
   background-repeat: no-repeat;
   width: 445px;
@@ -25,7 +9,6 @@
   border-radius: 12px;
   color: white;
   text-transform: uppercase;
-  /* padding: 10px; */
   position: absolute;
 }
 
@@ -51,13 +34,13 @@
   top: 7%;
 }
 
-h3.ccNumber {
+/* h3.ccNumber {
   width: fit-content;
   position: relative;
   top: 35%;
   left: 5%;
   margin: 0;
-}
+} */
 
 p { 
   display: inline-grid;
@@ -71,15 +54,22 @@ p.cardholder {
   left: 5%;
 }
 
+p.ccNumber {
+  top: 8rem;
+  left: 1.5rem;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
 p.expDate {
   right: 5%;
 }
 
 @media screen and (max-width: 375px) {
   .front-card {
-    zoom: 0.63;
+    zoom: 0.6;
     position: absolute;
-    left: 3%;
+    left: 2rem;
     top: 11rem;
   }
 

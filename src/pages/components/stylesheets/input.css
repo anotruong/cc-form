@@ -5,7 +5,6 @@ input {
   margin-bottom: 30px;
   border: 1px hsl(270, 3%, 87%) solid;
   border-radius: 5px;
-  /* padding-left: -10px; */
   text-indent: 1em;
   outline: none;
 }
@@ -27,30 +26,44 @@ input:focus {
   border: 1px #510077 solid;
 }
 
-.form-input---invalid p {
+.form-input {
+  max-width: fit-content;
+}
+
+.form-input:invalid {
+  color: red;
+  width: fit-content;
+}
+
+.form-input input:invalid {
+  content: 'Please fill this in correctly';
+  border-color: red;
+  margin: 15px;
+  width: fit-content;
+}
+
+.form-control--invalid label,
+.form-control--invalid p {
   color: red;
 }
 
-.form-input---invalid input {
+.form-control--invalid input,
+.form-control--invalid textarea {
   border-color: red;
+  background: #ffd1d1;
 }
 
 @media screen and (max-width: 375px) {
-  /* input.long-field {
-    width: 330px;
+  input.long-field {
+    max-width: 95%;
   }
 
-  input.medium-field {
-    max-width: 85%;
-
-  }
-
-  input.small-field {
+  input.medium-field,
+  .small-field {
     margin-right: 0px;
-    max-width: 85%
-  } */
+  }
 
-  input {
-    max-width: 85%
+  ::placeholder {
+    zoom: 1.2;
   }
 } 
