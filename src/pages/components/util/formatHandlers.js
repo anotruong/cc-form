@@ -32,17 +32,15 @@ Algo:
 export const CC_FORMAT = (ele) => {
   // try {
   // if ()
-    let filteredEle = ("" + ele).replace(/\D/g);
+    let filteredEle = ele.split("").filter(digit => digit.match(/\d/));
     // console.log(filteredEle)
     // const arrEle = filteredEle.match(/(\d{0,4})?(\d{0,4})?(\d{0,4})?(\d{0,4})?$/);
-    const arrEle = filteredEle.split('')
-                              .map((char, idx) => 
+    const arrEle = filteredEle.map((char, idx) => 
                                 idx % 4 === 0 && idx !== 0 ? " " + char : char
                               );
-    return arrEle
-    // .join("");
+    return arrEle.join("");
   // } catch(err) {
-    return "";
+    // return "";
   // }
 }
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useState, useReducer} from 'react';
+import React, {useCallback, useReducer} from 'react';
 import Input from './formElements/input';
 import Button from './formElements/button';
 import { 
@@ -8,7 +8,6 @@ import {
   VALIDATOR_YEAR, 
   VALIDATOR_CVC 
 } from './util/validators';
-import {CC_FORMAT} from './util/formatHandlers';
 
 import './stylesheets/forms.css';
 
@@ -55,6 +54,7 @@ const Forms = () => {
   })
 
   const inputHandler = useCallback((id, value, isValid) => {
+    // console.log(value);
     //avoid an infinite loop 
     //There are no dependencies that are passed into the empty array, this is so that if component function (Forms) rerenders, the function passed into useCallback will be stored away by React.js so that no new function is create when the compoent (Forms) rerenders.
     //Manage the validity and 
@@ -64,7 +64,6 @@ const Forms = () => {
       isValid: isValid, 
       inputId: id
     });
-
   }, []);
 
   const SubmitHandler = event => {
@@ -72,14 +71,6 @@ const Forms = () => {
     //send to server.
     console.log(formState.inputs);
   };
-
-  const ccElement = document.getElementById("ccInfo");
-
-  // ccElement.onInput = (val) => { 
-  //   val.preventDefault();
-  //   val.target.value = CC_FORMAT(val.target.value)};
-
-  // onSubmit={SubmitHandler}
 
   return (
     <form className="form-control" >
@@ -96,7 +87,7 @@ const Forms = () => {
       <Input 
         id="ccInfo"
         element="input" 
-        type="number" 
+        type="text" 
         label="card number" 
         placeholder={'e.g. 1234 5678 9123 0000'}
         validators={[VALIDATOR_CC()]}
