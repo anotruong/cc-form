@@ -9,6 +9,10 @@ input {
   outline: none;
 }
 
+input::after {
+  content: attr(data-errorText);
+}
+
 input.long-field {
  width: 380px;
 }
@@ -22,6 +26,12 @@ input.small-field {
   margin-right: 8px
 }
 
+#tester {
+  border: 3px solid red;
+  width: 100px;
+  height: 100px;
+}
+
 input:focus {
   border: 1px #510077 solid;
 }
@@ -30,27 +40,32 @@ input:focus {
   max-width: fit-content;
 }
 
-.form-input:invalid {
+.form-control--invalid::after {
+  /* content: attr(errorText); */
+  /* content: 'Please fill this in correctly'; */
   color: red;
   width: fit-content;
+  font-size: 11px;
+  display: block;
 }
 
-.form-input input:invalid {
+/* .form-input--invalid input::after {
   content: 'Please fill this in correctly';
   border-color: red;
   margin: 15px;
   width: fit-content;
-}
+} */
 
 .form-control--invalid label,
 .form-control--invalid p {
   color: red;
+  /* content: 'Please fill this in correctly'; */
 }
 
-.form-control--invalid input,
-.form-control--invalid textarea {
+.form-control--invalid input {
   border-color: red;
   background: #ffd1d1;
+  
 }
 
 @media screen and (max-width: 375px) {

@@ -1,4 +1,4 @@
-.front-card {
+#front-card {
   background-image: url(../images/bg-card-front.png);
   background-size: 445px 245px;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   position: absolute;
 }
 
-.big-circle {
+#big-circle {
   display: inline-grid;
   background-color: white;
   border-radius: 50px;
@@ -23,7 +23,7 @@
   top: 10%;
 }
 
-.small-circle {
+#small-circle {
   display: inline-grid;
   border-radius: 50px;
   border: white solid 1px;
@@ -50,30 +50,30 @@ p {
   margin: 0;
 }
 
-p.cardholder {
+p#cardholder {
   left: 5%;
 }
 
-p.ccNumber {
+p#ccNumber {
   top: 8rem;
   left: 1.5rem;
   font-size: 35px;
   font-weight: lighter;
 }
 
-p.expDate {
+p#expDate {
   right: 5%;
 }
 
 @media screen and (max-width: 375px) {
-  .front-card {
+  #front-card {
     zoom: 0.6;
     position: absolute;
     left: 2rem;
     top: 11rem;
   }
 
-  p.ccNumber {
+  p#ccNumber {
     zoom: 1.4;
     letter-spacing: 2.4px;
     left: 5%;

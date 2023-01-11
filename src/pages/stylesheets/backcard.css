@@ -1,4 +1,4 @@
- .back-card {
+ #back-card {
   background-image: url(../images/bg-card-back.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
   /* padding-left: ; */
 }
 
-p.cvc-number {
+p#cvc-number {
   color: white;
   position: absolute;
   top: 43%;
@@ -21,14 +21,14 @@ p.cvc-number {
 }
 
 @media screen and (max-width: 375px) {
-  .back-card {
+  #back-card {
     zoom: 0.6;
     top: 2.5rem;
     /* left: 5%; */
     right: 2rem;
   }
 
-  p.cvc-number {
+  p#cvc-number {
     top: 44%;
     right: 3rem;
   }

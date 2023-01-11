@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-import './pages/components/stylesheets/index.css';
+import './pages/stylesheets/index.css';
 
 ReactDOM.render(<App />,
 document.getElementById('root'));

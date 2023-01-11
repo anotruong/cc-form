@@ -52,7 +52,8 @@ export const validate = (value, validators) => {
     }
     if (validators[type] === VALIDATOR_TYPE_CC) {
       //pass value through spacing function. trim the excessive in the function.
-      isValid = isValid && numLength(16);
+      //16 digits concat with 3 white spaces.
+      isValid = isValid && numLength(19);
       // isValid = 'It works'
     }
     if (validators[type] === VALIDATOR_TYPE_MONTH) {

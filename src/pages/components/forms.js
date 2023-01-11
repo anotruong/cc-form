@@ -9,7 +9,7 @@ import {
   VALIDATOR_CVC 
 } from './util/validators';
 
-import './stylesheets/forms.css';
+import '../stylesheets/forms.css';
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -44,20 +44,15 @@ const Forms = () => {
       name: {
         value: '',
         isValid: false
-      },
-      ccInfo: {
-        value: '',
-        isValid: false
       }
     },
     isValid: false
   })
 
   const inputHandler = useCallback((id, value, isValid) => {
-    // console.log(value);
     //avoid an infinite loop 
-    //There are no dependencies that are passed into the empty array, this is so that if component function (Forms) rerenders, the function passed into useCallback will be stored away by React.js so that no new function is create when the compoent (Forms) rerenders.
-    //Manage the validity and 
+      //There are no dependencies that are passed into the empty array, this is so that if component function (Forms) rerenders, the function passed into useCallback will be stored away by React.js so that no new function is create when the compoent (Forms) rerenders.
+      //Manage the validity and 
     dispatch({
       type: 'INPUT_CHANGE', 
       value: value, 
@@ -66,11 +61,12 @@ const Forms = () => {
     });
   }, []);
 
-  const SubmitHandler = event => {
-    event.preventDefault();
-    //send to server.
-    console.log(formState.inputs);
-  };
+
+   // const SubmitHandler = event => {
+  //   event.preventDefault();
+  //   //send to server.
+  //   console.log(formState.inputs);
+  // };
 
   return (
     <form className="form-control" >
@@ -91,7 +87,7 @@ const Forms = () => {
         label="card number" 
         placeholder={'e.g. 1234 5678 9123 0000'}
         validators={[VALIDATOR_CC()]}
-        errorText={"Wrong format, numbers only."}
+        data-errorText={"Wrong format, numbers only."}
         onInput={inputHandler}
       />
       <Input 
@@ -128,5 +124,6 @@ const Forms = () => {
     </form>    
   );
 };
+
 
 export default Forms;
