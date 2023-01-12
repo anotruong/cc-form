@@ -50,10 +50,11 @@
   }
 
   .form-container {
-    max-width: 100%;
+    max-width: 346.5px;
     height: 60%;
     bottom: 0rem;
     position: absolute;
     padding: 0rem;
+    right: 1.5rem;
   }
 }

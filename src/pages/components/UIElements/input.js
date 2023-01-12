@@ -1,7 +1,7 @@
-import React, {useContext, useReducer} from 'react';
-import {validate} from '../util/validators.js';
-import {CC_FORMAT} from '../util/formatHandlers';
-import {InputContext} from '../../context/inputContext.js';
+import React, { useContext, useReducer } from 'react';
+import { validate } from '../util/validators.js';
+import { CC_FORMAT } from '../util/formatHandlers';
+import { InputContext } from '../context/inputContext.js';
 import '../../stylesheets/input.css';
 
 const inputReducer = (state, action) => {
@@ -93,7 +93,7 @@ const Input = props => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={inputState.value}
-          errorText={props.errorText}
+          errortext={props.errortext}
         />
       );
     } else if (props.id === 'security') {
@@ -106,7 +106,7 @@ const Input = props => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={inputState.value}
-          errorText={props.errorText}
+          errortext={props.errortext}
          />
       );
     } else if (props.id === 'ccInfo') {
@@ -119,7 +119,7 @@ const Input = props => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={[CC_FORMAT(inputState.value)]}
-          errorText={props.errorText}
+          errortext={props.errortext}
         />
       );
     } else {
@@ -132,7 +132,7 @@ const Input = props => {
           onChange={changeHandler}
           onBlur={touchHandler}
           value={inputState.value}
-          errorText={props.errorText}
+          errortext={props.errortext}
         />
       );
     }
@@ -148,7 +148,7 @@ const Input = props => {
       'form-control--invalid'}`}>
       <label htmlFor={props.id}>{props.label}</label>
       {element}
-      {/* {!inputState.isValid && inputState.isTouched && <p>{props.errorText}</p>} */}
+      {/* {!inputState.isValid && inputState.isTouched && <p>{props.errortext}</p>} */}
       </div>
       {/* <div id="tester">{inputState.value}</div> */}
     </>

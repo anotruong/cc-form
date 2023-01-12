@@ -1,0 +1,49 @@
+#completed-container {
+  /* border: 2px solid red; */
+  height: 350px;
+  top: 2rem;
+  left: 0%;
+  position: relative;
+}
+
+#completed-flex {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid aqua; */
+  height: auto;
+  width: 350px;
+  position: relative;
+  top:1rem;
+  left: 1%;
+}
+
+#completed-flex h1 {
+  letter-spacing: 3px;
+  font-weight: 100;
+  position: relative;
+  top: .7rem;
+
+}
+
+#completed-flex h3 {
+  color: lightgray;
+  font-size: large;
+  font-weight: 100;
+  position: relative;
+  bottom: 1rem;
+}
+
+@media screen and (max-width: 375px) {
+
+  #completed-flex {
+    /* border: 2px solid aqua; */
+    height: auto;
+    width: 350px;
+    position: relative;
+    top: 3rem;
+    left: 2%;
+  }
+}

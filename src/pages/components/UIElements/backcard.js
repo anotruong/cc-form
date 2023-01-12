@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { InputContext } from '../../context/inputContext';
+import { InputContext } from '../context/inputContext';
 
 
 import '../../stylesheets/backcard.css';

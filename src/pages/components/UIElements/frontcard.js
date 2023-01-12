@@ -1,10 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 // import Inputs from '../formElements/input.js';
 // Eventually real time change the dummy name of the front card to match the name on the form.
 // import {extractedInputState} from '../formElements/input';
 // import PlaceholderHandler from '../util/placeholder';
 import {CC_FORMAT} from '../util/formatHandlers';
-import { InputContext } from '../../context/inputContext';
+import { InputContext } from '../context/inputContext';
 
 import '../../stylesheets/frontcard.css';
 

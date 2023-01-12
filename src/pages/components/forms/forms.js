@@ -1,15 +1,17 @@
-import React, {useCallback, useReducer} from 'react';
-import Input from './formElements/input';
-import Button from './formElements/button';
+import React, { useCallback, useContext, useReducer } from 'react';
+import CompletedPage from './completion';
+import Input from '../UIElements/input';
+import { InputContext } from '../context/inputContext';
+import Button from '../UIElements/button';
 import { 
   VALIDATOR_REQUIRED, 
   VALIDATOR_CC, 
   VALIDATOR_MONTH, 
   VALIDATOR_YEAR, 
   VALIDATOR_CVC 
-} from './util/validators';
+} from '../util/validators';
 
-import '../stylesheets/forms.css';
+import '../../stylesheets/forms.css';
 
 const formReducer = (state, action) => {
   switch (action.type) {
@@ -39,7 +41,9 @@ const formReducer = (state, action) => {
 };
 
 const Forms = () => {
-  const [formState, dispatch] = useReducer(formReducer, {
+  const { formCompleted } = useContext(InputContext);
+
+  const [ formState, dispatch] = useReducer(formReducer, {
     inputs: {
       name: {
         value: '',
@@ -61,7 +65,6 @@ const Forms = () => {
     });
   }, []);
 
-
    // const SubmitHandler = event => {
   //   event.preventDefault();
   //   //send to server.
@@ -69,6 +72,8 @@ const Forms = () => {
   // };
 
   return (
+    <>
+    { !formCompleted ? 
     <form className="form-control" >
       <Input 
         id="name"
@@ -77,7 +82,7 @@ const Forms = () => {
         label="cardholder name" 
         placeholder={'e.g. Jane Appleseed'} 
         validators={[VALIDATOR_REQUIRED()]}
-        errorText={"Can't be blank"}
+        errortext={"Can't be blank"}
         onInput={inputHandler}
       />
       <Input 
@@ -87,7 +92,7 @@ const Forms = () => {
         label="card number" 
         placeholder={'e.g. 1234 5678 9123 0000'}
         validators={[VALIDATOR_CC()]}
-        data-errorText={"Wrong format, numbers only."}
+        errortext={"Wrong format, numbers only."}
         onInput={inputHandler}
       />
       <Input 
@@ -97,7 +102,7 @@ const Forms = () => {
         label="MM" 
         placeholder={'MM'}
         validators={[VALIDATOR_MONTH()]}
-        errorText={"Can't be blank"}
+        errortext={"Can't be blank"}
         onInput={inputHandler}
       />
       <Input 
@@ -107,7 +112,7 @@ const Forms = () => {
         label="YY" 
         placeholder={'YY'}
         validators={[VALIDATOR_YEAR()]}
-        errorText={"Can't be blank"}
+        errortext={"Can't be blank"}
         onInput={inputHandler}
       />
       <Input 
@@ -117,11 +122,13 @@ const Forms = () => {
         label="cvc" 
         placeholder={'e.g 123'}
         validators={[VALIDATOR_CVC()]}
-        errorText={"Can't be blank"}
+        errortext={"Can't be blank"}
         onInput={inputHandler}
-      />
-      <Button type="submit">confirm</Button> 
-    </form>    
+      /> 
+      </form> : <CompletedPage /> }
+     <Button />
+    {/* </form>     */}
+    </>
   );
 };
 

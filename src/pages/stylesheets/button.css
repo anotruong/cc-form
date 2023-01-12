@@ -13,8 +13,11 @@ button {
 
 @media screen and (max-width: 375px) {
 
-  /* button {
-    max-width: 95.5%
-  } */
+  button {
+    max-width: 340px;
+    position: absolute;
+    top: 19rem;
+    left: 0.8rem;
+  }
   
 }
