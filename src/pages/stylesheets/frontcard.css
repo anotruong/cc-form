@@ -34,14 +34,6 @@
   top: 7%;
 }
 
-/* h3.ccNumber {
-  width: fit-content;
-  position: relative;
-  top: 35%;
-  left: 5%;
-  margin: 0;
-} */
-
 p { 
   display: inline-grid;
   width:fit-content;
@@ -52,6 +44,8 @@ p {
 
 p#cardholder {
   left: 5%;
+  letter-spacing: 2px;
+  font-weight: 100;
 }
 
 p#ccNumber {
@@ -73,12 +67,21 @@ p#expDate {
     top: 11rem;
   }
 
+  p#cardholder,
+  p#expDate {
+    top: 80%;
+    font-size: 16px;
+  }
+
   p#ccNumber {
     zoom: 1.4;
     letter-spacing: 2.4px;
     left: 5%;
     top: 51%;
     font-size: 21px;
-    /* font-weight: 100 */
+  }
+
+  p#expDate {
+    right: 6%
   }
 }

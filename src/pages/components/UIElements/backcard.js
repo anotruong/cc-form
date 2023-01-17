@@ -1,9 +1,7 @@
 import React, {useContext} from 'react';
 import { InputContext } from '../context/inputContext';
 
-
 import '../../stylesheets/backcard.css';
-// import Input from '../formElements/input';
 
 const BackCard = () => {
 

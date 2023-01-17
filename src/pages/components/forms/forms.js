@@ -41,9 +41,9 @@ const formReducer = (state, action) => {
 };
 
 const Forms = () => {
-  const { formCompleted } = useContext(InputContext);
+  const { formCompleted, monthError, yearError } = useContext(InputContext);
 
-  const [ formState, dispatch] = useReducer(formReducer, {
+  const [ dispatch ] = useReducer(formReducer, {
     inputs: {
       name: {
         value: '',
@@ -65,18 +65,12 @@ const Forms = () => {
     });
   }, []);
 
-   // const SubmitHandler = event => {
-  //   event.preventDefault();
-  //   //send to server.
-  //   console.log(formState.inputs);
-  // };
-
   return (
     <>
-    { !formCompleted ? 
-    <form className="form-control" >
+    { !formCompleted ? <form className="form-control" >
       <Input 
         id="name"
+        className="long-field"
         element="input" 
         type="text" 
         label="cardholder name" 
@@ -87,6 +81,7 @@ const Forms = () => {
       />
       <Input 
         id="ccInfo"
+        className="long-field"
         element="input" 
         type="text" 
         label="card number" 
@@ -97,26 +92,29 @@ const Forms = () => {
       />
       <Input 
         id="month"
+        className="small-field"
         element="input" 
         type="number" 
-        label="MM" 
+        label=""
         placeholder={'MM'}
         validators={[VALIDATOR_MONTH()]}
-        errortext={"Can't be blank"}
+        errortext={""}
         onInput={inputHandler}
       />
       <Input 
         id="year"
+        className="small-field"
         element="input" 
         type="number" 
-        label="YY" 
+        label="" 
         placeholder={'YY'}
         validators={[VALIDATOR_YEAR()]}
-        errortext={"Can't be blank"}
+        errortext={""}
         onInput={inputHandler}
       />
       <Input 
         id="security"
+        className="medium-field"
         element="input" 
         type="number" 
         label="cvc" 
@@ -125,9 +123,10 @@ const Forms = () => {
         errortext={"Can't be blank"}
         onInput={inputHandler}
       /> 
-      </form> : <CompletedPage /> }
-     <Button />
-    {/* </form>     */}
+      {!monthError || !yearError ? <label id="monthYearError">Can't be blank</label> : false }
+      </form> 
+      : <CompletedPage />}
+     {!formCompleted ? <Button id='form'/> : <Button id='completed' />}
     </>
   );
 };

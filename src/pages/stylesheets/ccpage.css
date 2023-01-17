@@ -20,7 +20,6 @@
   top: 3rem;
   margin-left: 0;
   margin-right: 0;
-  /* height: 400px; */
   max-width: 44%;
   width: 100%;
   padding-bottom: 34rem;
@@ -46,7 +45,6 @@
     top: 0rem;
     height: 17rem;
     padding-bottom: 0rem;
-    /* background-image: url(../images/bg-main-mobile.png); */
   }
 
   .form-container {

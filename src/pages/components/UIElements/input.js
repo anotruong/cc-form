@@ -1,18 +1,16 @@
 import React, { useContext, useReducer } from 'react';
-import { validate } from '../util/validators.js';
+import { Validate } from '../util/validators.js';
 import { CC_FORMAT } from '../util/formatHandlers';
 import { InputContext } from '../context/inputContext.js';
 import '../../stylesheets/input.css';
 
 const inputReducer = (state, action) => {
-  //we define the prop 'action' to have a 'type' and 'val' property.
   switch (action.type) {
     case 'CHANGE':
       return {
         ...state,
-        // This spread syntax + 'state' copies the existing state into this new object.
         value: action.val,
-        isValid: validate(action.val, action.validators),
+        isValid: Validate(action.val, action.validators),
       };
     case 'TOUCH': {
       return {
@@ -32,13 +30,6 @@ const Input = props => {
     isTouched: false,
     isValid: false,
   });
-  //Figuring out if these are needed yet.
-  // const {id, onInput} = props;
-  // const {value, isValid} = inputState;
-
-  // tester.push(inputState);
-
-  // const {id, value, isValid} = useState(inputState);
 
   const {
     setCardHolderName,
@@ -59,20 +50,15 @@ const Input = props => {
   }
 
   const changeHandler = event => {
-    //store the values and validate
-    // console.log(event.target.id);
     let id = event.target.id;
     let value = event.target.value;
-    // console.log(cardHolder)
-    //We have to pass in an 'action' prop, which was defined in function `inputReducer'.
+
     dispatch({
       type: 'CHANGE', 
       val: value, 
       validators: props.validators
     })
-    //'event' is an object we get automatically on the change event. 
-    // 'even.target' is the input element which the event was triggered. 
-    // 'value' is the value that the user entered/
+
     updateStateHandler(id, value);
   };
 
@@ -83,74 +69,36 @@ const Input = props => {
   }
 
   const fieldHandler = props => {
-    if (props.placeholder === "MM" || props.placeholder === "YY") {
-      return (
-        <input 
-          id={props.id} 
-          className={"small-field"}
-          type={props.type} 
-          placeholder={props.placeholder} 
-          onChange={changeHandler}
-          onBlur={touchHandler}
-          value={inputState.value}
-          errortext={props.errortext}
-        />
-      );
-    } else if (props.id === 'security') {
-      return (
-        <input 
-          id={props.id} 
-          className={"medium-field"}
-          type={props.type} 
-          placeholder={props.placeholder} 
-          onChange={changeHandler}
-          onBlur={touchHandler}
-          value={inputState.value}
-          errortext={props.errortext}
-         />
-      );
-    } else if (props.id === 'ccInfo') {
-      return (
-        <input 
-          id={props.id} 
-          className={"long-field"}
-          type={props.type} 
-          placeholder={props.placeholder} 
-          onChange={changeHandler}
-          onBlur={touchHandler}
-          value={[CC_FORMAT(inputState.value)]}
-          errortext={props.errortext}
-        />
-      );
-    } else {
-      return (
-        <input 
-          id={props.id} 
-          className={"long-field"}
-          type={props.type} 
-          placeholder={props.placeholder} 
-          onChange={changeHandler}
-          onBlur={touchHandler}
-          value={inputState.value}
-          errortext={props.errortext}
-        />
-      );
-    }
+
+    return (
+      <input 
+        id={props.id} 
+        className={props.className}
+        type={props.type} 
+        placeholder={props.placeholder} 
+        onChange={changeHandler}
+        onBlur={touchHandler}
+        value={inputState.value}
+        errortext={props.errortext}
+      />
+    )
   }
 
   const element = fieldHandler(props);
-
-  // console.log(cardHolder)
 
   return (
     <>
       <div className={`form-input ${!inputState.isValid && inputState.isTouched &&
       'form-control--invalid'}`}>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label id={props.id} htmlFor={props.id}>{props.label}</label>
       {element}
-      {/* {!inputState.isValid && inputState.isTouched && <p>{props.errortext}</p>} */}
+      {!inputState.isValid && inputState.isTouched && <label 
+        id={'errorText'}
+        className={props.id}
+        >
+          {props.errortext}
+        </label>}
       </div>
-      {/* <div id="tester">{inputState.value}</div> */}
     </>
   )
 };

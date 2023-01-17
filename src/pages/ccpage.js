@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import Button from './components/UIElements/button';
 import Forms from './components/forms/forms';
-import CompletedPage from './components/forms/completion';
 import FrontCard from './components/UIElements/frontcard';
 import BackCard from './components/UIElements/backcard';
 
@@ -16,8 +14,8 @@ const CCPage = () => {
   const [year, setExpYear] = useState("00");
   const [securityNum, setSecurityNum] = useState("000");
   const [formCompleted, setFormCompleted] = useState(false)
-
-  // const providerValue = useMemo(() => ({cardHolder, setCardHolderName}), [cardHolder, setCardHolderName]);
+  const [monthError, setMonthError] = useState(true);
+  const [yearError, setYearError] = useState(true);
 
   return(
     <div className="ccform">
@@ -27,17 +25,16 @@ const CCPage = () => {
         month, setExpMonth, 
         year, setExpYear, 
         securityNum, setSecurityNum,
-        formCompleted, setFormCompleted
+        formCompleted, setFormCompleted,
+        monthError, setMonthError,
+        yearError, setYearError
       }} >
         <div className="card-container">
           <BackCard />
           <FrontCard />
         </div>
         <div className="form-container">
-          {/* {formCompleted ? <CompletedPage /> : <Forms />} */}
           <Forms />
-          {/* <Button /> */}
-          {/* <CompletedPage /> */}
         </div>
       </InputContext.Provider>
     </div> 

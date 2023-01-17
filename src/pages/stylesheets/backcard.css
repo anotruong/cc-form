@@ -7,24 +7,19 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  /* border-radius: 12px; */
-  /* padding-left: ; */
 }
 
 p#cvc-number {
   color: white;
   position: absolute;
   top: 43%;
-  /* left: 77%; */
   right: 13%;
-  /* width: fit-content; */
 }
 
 @media screen and (max-width: 375px) {
   #back-card {
     zoom: 0.6;
     top: 2.5rem;
-    /* left: 5%; */
     right: 2rem;
   }
 
@@ -32,5 +27,4 @@ p#cvc-number {
     top: 44%;
     right: 3rem;
   }
-  
 }

@@ -1,5 +1,7 @@
 button {
-  width: 100%;
+  left: 3.5rem;
+  position: relative;
+  width: 389px;
   height: 50px;
   text-transform: capitalize;
   padding: 0px;
@@ -11,9 +13,18 @@ button {
   font-size: 18px;
 }
 
+button#form {
+  top: 2rem;
+}
+
+button#completed {
+  top: 1.8rem;
+}
+
 @media screen and (max-width: 375px) {
 
-  button {
+  button#completed,
+  button#form {
     max-width: 340px;
     position: absolute;
     top: 19rem;

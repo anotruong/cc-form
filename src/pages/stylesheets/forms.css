@@ -1,6 +1,6 @@
 .form-control {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;  
@@ -8,10 +8,6 @@
   left: 15%;
   top: 2rem;
   position: relative;
-}
-
-.form-control input::after {
-  content: attr(data-errorText);
 }
 
 label {
@@ -25,18 +21,23 @@ label {
   white-space: nowrap;
 }
 
+label#monthYearError {
+  position: relative;
+  bottom: 24px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: 'Space Grotesk';
+  color: red;
+}
+
 @media screen and (max-width: 375px) {
   .form-control {
     zoom: .9;
-    /* position: absolute; */
-    /* top: 21rem; */
     left: 1rem;
     max-width: 97%;
-    /* padding-left: 5%; */
   }
 
   label {
-    /* max-width: 50px; */
     zoom: 1.1;
     margin-right: 0;
   }

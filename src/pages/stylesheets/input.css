@@ -9,27 +9,18 @@ input {
   outline: none;
 }
 
-input::after {
-  content: attr(data-errorText);
-}
-
 input.long-field {
  width: 380px;
 }
 
 input.medium-field{
-  width: 168px;
+  width: 178px;
+  margin-left: 8px;
 }
 
 input.small-field {
   width: 80px;
-  margin-right: 8px
-}
-
-#tester {
-  border: 3px solid red;
-  width: 100px;
-  height: 100px;
+  margin-right: 8px;
 }
 
 input:focus {
@@ -41,31 +32,40 @@ input:focus {
 }
 
 .form-control--invalid::after {
-  /* content: attr(errorText); */
-  /* content: 'Please fill this in correctly'; */
   color: red;
   width: fit-content;
   font-size: 11px;
   display: block;
 }
 
-/* .form-input--invalid input::after {
-  content: 'Please fill this in correctly';
-  border-color: red;
-  margin: 15px;
-  width: fit-content;
-} */
-
-.form-control--invalid label,
+.form-control--invalid label#errorText,
 .form-control--invalid p {
   color: red;
-  /* content: 'Please fill this in correctly'; */
 }
 
 .form-control--invalid input {
   border-color: red;
   background: #ffd1d1;
   
+}
+
+label#security,
+label#errorText.security {
+  margin-left: 8px;
+}
+
+label#errorText { 
+  margin-top: -23px;
+  margin-bottom: 12px;
+  font-size: 10px;
+}
+
+label#month::before {
+  content: "exp date. (m";
+}
+
+label#year::before {
+  content: "m/yy)";
 }
 
 @media screen and (max-width: 375px) {
@@ -78,7 +78,27 @@ input:focus {
     margin-right: 0px;
   }
 
+  input.medium-field {
+    width: 170px;
+  }
+
   ::placeholder {
     zoom: 1.2;
   }
+
+  label#month::before {
+    content: "exp date. (";
+  }
+  
+  label#year::before {
+    content: "mm/yy)";
+  }
+
+  label#security {
+    margin-left: 8px;
+  }
+
+  label.security#errorText{
+    margin-left: 8px;
+  } 
 } 
