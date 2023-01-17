@@ -10,5 +10,6 @@
 
 ### Visuals:
 
-
-![Alt text](public/desktopView.png?raw=true "Title")
+![desktop view](public/desktopView.png?raw=true "desktop")
+![mobile view](public/mobileViewCompleted.png?raw=true "mobile1")
+![mobile view](public/mobileViewInvalid.png?raw=true "mobile2")
