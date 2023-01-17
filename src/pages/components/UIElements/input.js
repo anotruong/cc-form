@@ -69,6 +69,10 @@ const Input = props => {
   }
 
   const fieldHandler = props => {
+    let valueFormatted = inputState.value;
+    if (props.id === 'ccInfo') {
+      valueFormatted = CC_FORMAT(inputState.value);
+    }
 
     return (
       <input 
@@ -78,7 +82,7 @@ const Input = props => {
         placeholder={props.placeholder} 
         onChange={changeHandler}
         onBlur={touchHandler}
-        value={inputState.value}
+        value={valueFormatted}
         errortext={props.errortext}
       />
     )

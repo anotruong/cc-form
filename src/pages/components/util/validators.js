@@ -1,5 +1,6 @@
 import {useContext} from 'react';
 import { InputContext } from '../context/inputContext';
+import { CC_FORMAT } from './formatHandlers';
 
 const VALIDATOR_TYPE_REQUIRE = 'REQUIRE';
 const VALIDATOR_TYPE_CC = 'CC'; 
@@ -13,11 +14,15 @@ export const VALIDATOR_MONTH = () => ({type: VALIDATOR_TYPE_MONTH});
 export const VALIDATOR_YEAR = () => ({type: VALIDATOR_TYPE_YEAR});
 export const VALIDATOR_CVC = () => ({type: VALIDATOR_TYPE_CVC});
 
+const numLength = (numOfChar, val) => String(val).length === numOfChar;
+const notAlpha = (val) => val.split('').filter(char => char.match(/[\s\d]/)).join('');
+
 export const Validate = (value, validators) => { 
-  const numLength = (numOfChar) => String(value).length === numOfChar;
   const { setMonthError, setYearError } = useContext(InputContext);
 
   let isValid = true;
+  let lengthOfVal;
+
   validators = validators[0];
 
   for (const type in validators) {
@@ -27,23 +32,32 @@ export const Validate = (value, validators) => {
     }
 
     if (validators[type] === VALIDATOR_TYPE_CC) {
-      isValid = isValid && numLength(19);
+      let filteredValue = CC_FORMAT(value);
+
+      filteredValue = notAlpha(filteredValue);
+      lengthOfVal = 19;
+
+      isValid = isValid && numLength(lengthOfVal, filteredValue);
     }
 
     if (validators[type] === VALIDATOR_TYPE_MONTH) {
-      
       let month = /[0]{1}[0-9]{1}/.test(value) || /[1]{1}[0-2]{1}/.test(value) ? true : false;
+
       isValid = isValid && month;
       setMonthError(isValid);
     }
 
     if (validators[type] === VALIDATOR_TYPE_YEAR) {
-      isValid = isValid && numLength(2);
+      lengthOfVal = 2;
+
+      isValid = isValid && numLength(lengthOfVal, value);
       setYearError(isValid);
     }
 
     if (validators[type] === VALIDATOR_TYPE_CVC) {
-      isValid = isValid && numLength(3);
+      lengthOfVal = 3;
+      
+      isValid = isValid && numLength(lengthOfVal, value);
     }
   }
   return isValid;

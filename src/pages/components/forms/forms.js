@@ -54,9 +54,6 @@ const Forms = () => {
   })
 
   const inputHandler = useCallback((id, value, isValid) => {
-    //avoid an infinite loop 
-      //There are no dependencies that are passed into the empty array, this is so that if component function (Forms) rerenders, the function passed into useCallback will be stored away by React.js so that no new function is create when the compoent (Forms) rerenders.
-      //Manage the validity and 
     dispatch({
       type: 'INPUT_CHANGE', 
       value: value, 
