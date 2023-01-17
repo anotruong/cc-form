@@ -8,7 +8,9 @@
 - After subitting the form, the page will render a 'thank you' card and the text for the button will be changed to 'continue' in place of 'confirm'.
 - The app has a mobile view that begins at 375px.
 
-### Visuals:
+[Deployed on Heroku](https://interactive-ccform.herokuapp.com/)
+
+## Visuals:
 
 <div style="display: flex; flex-direction: row; align-content: space-between; width:fit-content; ">
   <img src="public/desktopView.png" width="864" height="540" />
