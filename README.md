@@ -10,6 +10,8 @@
 
 ### Visuals:
 
-![desktop view](public/desktopView.png?raw=true width=100 "desktop")
-![mobile view](public/mobileViewCompleted.png?raw=true "mobile1")
-![mobile view](public/mobileViewInvalid.png?raw=true "mobile2")
+<div style="display: flex; flex-direction: row; align-content: space-between; width:fit-content; ">
+  <img src="public/desktopView.png" width="864" height="540" />
+  <img src="public/mobileViewInvalid.png" width="375" height="667" />
+  <img src="public/mobileViewCompleted.png" width="375" height="667" /> 
+</div>
