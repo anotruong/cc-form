@@ -17,8 +17,15 @@ export const VALIDATOR_CVC = () => ({type: VALIDATOR_TYPE_CVC});
 const numLength = (numOfChar, val) => String(val).length === numOfChar;
 const notAlpha = (val) => val.split('').filter(char => char.match(/[\s\d]/)).join('');
 
-export const Validate = (value, validators) => { 
+
+const MMYYErrorHandler = (date, value) => {
   const { setMonthError, setYearError } = useContext(InputContext);
+
+  date === 'month' ? setMonthError(value) : setYearError(value);
+}
+
+export const Validate = (value, validators) => { 
+  // const { setMonthError, setYearError } = useContext(InputContext);
 
   let isValid = true;
   let lengthOfVal;
@@ -44,14 +51,14 @@ export const Validate = (value, validators) => {
       let month = /[0]{1}[0-9]{1}/.test(value) || /[1]{1}[0-2]{1}/.test(value) ? true : false;
 
       isValid = isValid && month;
-      setMonthError(isValid);
+      MMYYErrorHandler('month', isValid)
     }
 
     if (validators[type] === VALIDATOR_TYPE_YEAR) {
       lengthOfVal = 2;
 
       isValid = isValid && numLength(lengthOfVal, value);
-      setYearError(isValid);
+      MMYYErrorHandler('year', isValid);
     }
 
     if (validators[type] === VALIDATOR_TYPE_CVC) {
