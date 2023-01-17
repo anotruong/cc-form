@@ -1,6 +1,6 @@
 # Interactive Credit Card Form
 
-## This app utilizes React.js for a single page website. 
+## This app utilizes React.js in a single page app. 
 
 ## Features:
 - Validation for each input field.
