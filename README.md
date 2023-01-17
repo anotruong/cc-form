@@ -10,6 +10,6 @@
 
 ### Visuals:
 
-![desktop view](public/desktopView.png?raw=true =100 "desktop")
+![desktop view](public/desktopView.png?raw=true width=100 "desktop")
 ![mobile view](public/mobileViewCompleted.png?raw=true "mobile1")
 ![mobile view](public/mobileViewInvalid.png?raw=true "mobile2")
