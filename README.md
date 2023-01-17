@@ -3,6 +3,12 @@
 ## This app utilizes React.js for a single page website. 
 
 ## Features:
-- The images of cards should render the user information as it's being inputted.
-- When the form is filled in incorrectly, the error would be caught by the validation and would render the 'submit' button inactive.
-- When the form passes validation, a 'thank you' string and 'continue' button would be displayed in place of the form and 'submit' button.
+- Validation for each input field.
+- Auto formatting for credit card input field.
+- After subitting the form, the page will render a 'thank you' card and the text for the button will be changed to 'continue' in place of 'confirm'.
+- The app has a mobile view that begins at 375px.
+
+### Visuals:
+
+
+![Alt text](public/desktopView.png?raw=true "Title")
